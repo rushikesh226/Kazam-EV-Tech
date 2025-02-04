@@ -1,19 +1,25 @@
 import React from 'react'
-
+import { CgNotes } from "react-icons/cg";   
+import { MdLabelImportant } from "react-icons/md";  
+import { FaCheckDouble } from "react-icons/fa6";  
+import { TbNotebookOff } from "react-icons/tb";  
+import { Link } from 'react-router-dom';
 const Sidebar = () => {
     const data=[
         {
             title:"All Tasks",
+            icon:<CgNotes />,
+            link:"/"
 
         },
         {
-            title:"Important Tasks",
+            title:"Important Tasks",icon:<MdLabelImportant />,link:"/importantTasks"
 
         },{
-            title:"Completed Tasks",
+            title:"Completed Tasks",icon:<FaCheckDouble />,link:"/completedTasks"
 
         },{
-            title:"Incomplete Tasks",
+            title:"Incomplete Tasks",icon:<TbNotebookOff />,link:"/incompleteTasks"
 
         },
     ]
@@ -25,7 +31,7 @@ const Sidebar = () => {
       </div>
       <div>
         {data.map((item,i)=>{
-            return <div className='my-2'>{item.title}</div>
+            return <Link key={i} to={item.link} className='my-2 flex items-center hover:bg-gray-600 p-2 rounded transition-all duration-300'>{item.icon}&nbsp; {item.title}</Link>
         })}
       </div>
       <div>
