@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { IoAddCircleSharp } from "react-icons/io5";
-const Cards = ({home}) => {
+const Cards = ({home,setInputDiv}) => {
     const data=[
         {
             title: "Introduction to JavaScript",
@@ -52,7 +52,7 @@ const Cards = ({home}) => {
         })
       }
       {home==="true" && <div className='bg-gray-800 rounded-sm p-4 flex flex-col justify-center items-center text-gray-300 hover:scale-105 hover:cursor-pointer transition-all duration-300'>
-      <IoAddCircleSharp className='text-5xl'/>
+      <button onClick={()=>setInputDiv("fixed")}><IoAddCircleSharp className='text-5xl'/></button>
                 <h2 className='text-300 mt-4'>Add Task</h2>
             </div>}
     </div>
