@@ -42,8 +42,11 @@ const Sidebar = () => {
         const resp=await axios.get("http://localhost:1000/api/v2/get-all-tasks",{headers});
         setData(resp.data.data)
       }
-      fetchData()
-    }, [])
+      if(localStorage.getItem("id")&&localStorage.getItem("token")){
+
+        fetchData()
+      }
+    })
     
   return (
     <>
