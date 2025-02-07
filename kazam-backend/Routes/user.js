@@ -4,7 +4,7 @@ const bcrypt=require("bcryptjs");
 const jwt=require("jsonwebtoken")
 router.post("/sign-in",async(req,res)=>{
     try {
-        const {username}=req.body;
+    const {username}=req.body;
     const {email}=req.body;
     const existingUser=await User.findOne({username:username});
     const existingEmail=await User.findOne({email:email});
@@ -31,7 +31,7 @@ router.post("/sign-in",async(req,res)=>{
 })
 
 router.get("/log-in",async(req,res)=>{
-    const {username}=req.body;
+    const {username,password}=req.body;
     const existingUser=await User.findOne({username:username});
     if(!existingUser){
         return res.status(400).json({message:"Invalid Credentials"})
