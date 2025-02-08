@@ -22,7 +22,7 @@ const Login = () => {
         alert("All fields are required");
       } else {
         const resp = await axios.post(
-          "http://localhost:1000/api/v1/log-in",
+          "https://kazam-ev-tech-3.onrender.com/api/v1/log-in",
           data
         );
         console.log(resp);

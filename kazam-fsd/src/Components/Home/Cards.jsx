@@ -37,21 +37,21 @@ const Cards = ({home,setInputDiv,data,setUpdatedData}) => {
 
     const handleCompleteTask=async(id)=>{
       try {
-        await axios.put(`http://localhost:1000/api/v2/update-complete-task/${id}`,{},{headers});
+        await axios.put(`https://kazam-ev-tech-3.onrender.com/api/v2/update-complete-task/${id}`,{},{headers});
       } catch (error) {
         console.log(error)
       }
     }
     const handleImportantTask=async(id)=>{
       try {
-        await axios.put(`http://localhost:1000/api/v2/update-imp-task/${id}`,{},{headers});
+        await axios.put(`https://kazam-ev-tech-3.onrender.com/api/v2/update-imp-task/${id}`,{},{headers});
       } catch (error) {
         console.log(error)
       }
     };
     const handleDelete=async(id)=>{
       try {
-        const resp=await axios.delete(`http://localhost:1000/api/v2/delete-task/${id}`,{headers});
+        const resp=await axios.delete(`https://kazam-ev-tech-3.onrender.com/api/v2/delete-task/${id}`,{headers});
         console.log(resp.data.message)
       } catch (error) {
         console.log(error)

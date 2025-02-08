@@ -47,7 +47,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchData = async () => {
       const resp = await axios.get(
-        "http://localhost:1000/api/v2/get-all-tasks",
+        "https://kazam-ev-tech-3.onrender.com/api/v2/get-all-tasks",
         { headers }
       );
       setData(resp.data.data);

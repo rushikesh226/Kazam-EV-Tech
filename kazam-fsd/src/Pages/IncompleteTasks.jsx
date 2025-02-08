@@ -8,7 +8,7 @@ const IncompleteTasks = () => {
 
     useEffect(() => {
       const fetchData=async()=>{
-        const resp=await axios.get("http://localhost:1000/api/v2/get-incomplete-tasks",{headers});
+        const resp=await axios.get("https://kazam-ev-tech-3.onrender.com/api/v2/get-incomplete-tasks",{headers});
         setData(resp.data.data);
       }
       fetchData()

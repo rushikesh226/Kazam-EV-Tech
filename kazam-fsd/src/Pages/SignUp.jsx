@@ -21,7 +21,7 @@ const SignUp = () => {
         alert("All fields are required");
       } else {
         const resp = await axios.post(
-          "http://localhost:1000/api/v1/sign-up",
+          "https://kazam-ev-tech-3.onrender.com/api/v1/sign-up",
           data
         );
         console.log(resp);

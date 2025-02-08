@@ -22,7 +22,7 @@ const InputData = ({inputDiv,setInputDiv,updatedData,setUpdatedData}) => {
         alert("All Fields Are Required")
       }
       else{
-        const resp=await axios.post("http://localhost:1000/api/v2/create-task",data,{headers});
+        const resp=await axios.post("https://kazam-ev-tech-3.onrender.com/api/v2/create-task",data,{headers});
         console.log(resp,"in 23");
         setData({title:"",description:""});
         setInputDiv("hidden")
@@ -37,7 +37,7 @@ const InputData = ({inputDiv,setInputDiv,updatedData,setUpdatedData}) => {
         alert("All Fields Are Required")
       }
       else{
-        const resp=await axios.put(`http://localhost:1000/api/v2/update-task/${updatedData.id}`,data,{headers});
+        const resp=await axios.put(`https://kazam-ev-tech-3.onrender.com/api/v2/update-task/${updatedData.id}`,data,{headers});
         console.log(resp,"in 23");
         setInputDiv("hidden");
         setUpdatedData({id:"",title:"",description:""});
