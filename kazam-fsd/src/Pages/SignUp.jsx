@@ -10,7 +10,7 @@ const SignUp = () => {
     password: "",
   });
   const history = useNavigate();
-  const isLoggedIn=useSelector((state)=>state.auth.isLoggedIn);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
@@ -31,15 +31,15 @@ const SignUp = () => {
           password: "",
         });
         alert(resp.data.message);
-        console.log(resp)
-        history("/login")
+        console.log(resp);
+        history("/login");
       }
     } catch (error) {
       alert(error.response.data.message);
     }
   };
-  if(isLoggedIn===true){
-    history("/")
+  if (isLoggedIn === true) {
+    history("/");
   }
   return (
     <div className="h-[90vh] flex items-center justify-center">
